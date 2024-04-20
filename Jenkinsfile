@@ -1,5 +1,4 @@
 pipeline {
-    
     agent any
 
     stages {
@@ -7,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t vikashashoke/emailservice:latest ."
+                        sh "docker build -t vikashashoke/frontend:latest ."
                     }
                 }
             }
@@ -17,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push vikashashoke/emailservice:latest "
+                        sh "docker push vikashashoke/frontend:latest "
                     }
                 }
             }
